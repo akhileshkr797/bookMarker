@@ -1,0 +1,23 @@
+{
+  "name": "bookmarker",
+  "version": "1.0.0",
+  "description": "sample BookMark Project",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhileshkr797/bookMarker.git"
+  },
+  "keywords": [
+    "bookmark",
+    "electron"
+  ],
+  "author": "akhilesh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akhileshkr797/bookMarker/issues"
+  },
+  "homepage": "https://github.com/akhileshkr797/bookMarker#readme"
+}
