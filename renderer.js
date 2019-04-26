@@ -91,9 +91,7 @@ clearStorageButton.addEventListener('click', ()=>{
 
 //handling an error message
 const handleError = (error,url) =>{
-    errorMessage.innerHTML = `
-    There was an issue adding "${url}":${error.message}
-    `.trim()
+    errorMessage.innerHTML = `There was an issue adding "${url}":${error.message}`.trim()
 
     setTimeout(() => errorMessage.innerHTML = null, 5000)
 }
