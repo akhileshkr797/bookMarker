@@ -2,9 +2,6 @@
 const { remote } = require('electron')
 const { Menu } = remote
 
-//bookmarker
-const {shell} = require('electron')
-
 const myContextMenu = Menu.buildFromTemplate([
     {
         label:'remove',
@@ -16,6 +13,7 @@ const myContextMenu = Menu.buildFromTemplate([
 
 window.addEventListener('contextmenu', (event)=>{
     event.preventDefault()
+    event.srcElement
     myContextMenu.popup()
 })
 
@@ -23,6 +21,11 @@ function removeBookmark(){
     var x = document.querySelector('.links')
     x.remove(x.selectedIndex);
 }
+
+
+
+//bookmarker
+const {shell} = require('electron')
 
 //creates a DOM Parser instance..used after fetching the text contents
 const parser = new DOMParser();
