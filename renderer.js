@@ -1,4 +1,28 @@
+//remove bookmark
+const { remote } = require('electron')
+const { Menu } = remote
+
+//bookmarker
 const {shell} = require('electron')
+
+const myContextMenu = Menu.buildFromTemplate([
+    {
+        label:'remove',
+        click: () =>{
+            removeBookmark()
+        }
+    }
+])
+
+window.addEventListener('contextmenu', (event)=>{
+    event.preventDefault()
+    myContextMenu.popup()
+})
+
+function removeBookmark(){
+    var x = document.querySelector('.links')
+    x.remove(x.selectedIndex);
+}
 
 //creates a DOM Parser instance..used after fetching the text contents
 const parser = new DOMParser();
@@ -69,10 +93,7 @@ const getLinks = ()=>{
 const convertToElement = (link) =>{
     return `
     <div class = "link">
-    <h3>${link.title}</h3>
-    <p>
-    <a href = "${link.url}">${link.url}</a>
-    </p>
+    <h3 style="float:left;margin:5px; border:1px solid grey">${link.title}</h3>
     </div>
     `
 }
